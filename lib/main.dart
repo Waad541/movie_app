@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/home_screen_details.dart';
 import 'package:movie_app/main_screen.dart';
 import 'package:movie_app/splash_screen.dart';
 
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         MainScreen.routeName:(context)=>MainScreen(),
-        SplashScreen.routeName:(context)=>SplashScreen()
+        SplashScreen.routeName:(context)=>SplashScreen(),
+        HomeScreenDetails.routeName:(context)=>HomeScreenDetails()
 
       },
       initialRoute: SplashScreen.routeName,
