@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/API_MANAGER.dart';
-import 'package:movie_app/image_decoration.dart';
-import 'package:movie_app/models/home_screen_details_response.dart';
-import 'package:movie_app/small_container.dart';
+import 'package:movie_app/home/small_container.dart';
+
 
 class HomeScreenDetails extends StatefulWidget {
   static const String routeName = 'details';
@@ -40,7 +39,7 @@ class _HomeScreenDetailsState extends State<HomeScreenDetails> {
                   appBar: AppBar(
                     backgroundColor: Colors.transparent,
                     iconTheme: IconThemeData(
-                      color: Colors.white
+                        color: Colors.white
                     ),
                     title: Text(
                       movieDetails.title ?? "",
@@ -115,7 +114,7 @@ class _HomeScreenDetailsState extends State<HomeScreenDetails> {
                                   Expanded(
                                     child: Column(
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                      CrossAxisAlignment.start,
                                       children: [
                                         Row(
                                           children: [
@@ -221,11 +220,11 @@ class _HomeScreenDetailsState extends State<HomeScreenDetails> {
                                 child: Stack(children: [
                                   Column(
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                      CrossAxisAlignment.start,
                                       children: [
                                         ClipRRect(
                                           borderRadius:
-                                              BorderRadius.circular(10),
+                                          BorderRadius.circular(10),
                                           child: Image.network(
                                             "https://image.tmdb.org/t/p/w500${model?[index].posterPath ?? ""}",
                                             width: 105,
@@ -238,7 +237,7 @@ class _HomeScreenDetailsState extends State<HomeScreenDetails> {
                                         ),
                                         Row(
                                           mainAxisAlignment:
-                                              MainAxisAlignment.center,
+                                          MainAxisAlignment.center,
                                           children: [
                                             Icon(
                                               Icons.star,

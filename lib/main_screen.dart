@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/search/search_tab.dart';
 import 'package:movie_app/tabs/browser_screen.dart';
 import 'package:movie_app/tabs/home_screen.dart';
 import 'package:movie_app/tabs/search_screen.dart';
