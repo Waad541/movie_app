@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_app/Theme/my_theme.dart';
@@ -6,8 +7,6 @@ import 'package:movie_app/home/home_screen_details.dart';
 import 'package:movie_app/main_screen.dart';
 import 'package:movie_app/splash_screen.dart';
 import 'package:movie_app/tabs/watch_list_screen.dart';
-
-
 import 'firebase_options.dart';
 
 void main() async{
@@ -15,6 +14,7 @@ void main() async{
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await FirebaseFirestore.instance.disableNetwork();
   runApp( MyApp());
 }
 

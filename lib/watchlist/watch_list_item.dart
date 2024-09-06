@@ -5,7 +5,7 @@ import 'watch_list_model.dart';
 
 class WatchListItem extends StatelessWidget {
   WatchListModel model;
-   WatchListItem({required this.model,super.key});
+  WatchListItem({required this.model, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class WatchListItem extends StatelessWidget {
       child: Row(
         children: [
           Image.network(
-            model.image??"",
+            model.image ?? "",
             height: 106,
             width: 140,
             fit: BoxFit.cover,
@@ -24,22 +24,23 @@ class WatchListItem extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(model.title??"",style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 17,
-                  fontWeight: FontWeight.w500
-                ),),
-                Text(model.releaseDate??"",style: TextStyle(
-                    color: Color(0xffB5B4B4),
-                    fontSize: 13,
-                    fontWeight: FontWeight.w300
-                ),)
+                Text(model.title ?? "",
+                    style: Theme.of(context).textTheme.bodyMedium),
+                Text(model.releaseDate ?? "",
+                    style: Theme.of(context).textTheme.bodySmall)
               ],
             ),
           ),
-          IconButton(onPressed: (){
-            FirebaseFunctions.deleteFromWatch(model.id.toString());
-          }, icon: Icon(Icons.delete,color: Colors.red,size: 25,),)
+          IconButton(
+            onPressed: () {
+              FirebaseFunctions.deleteFromWatch(model.id.toString());
+            },
+            icon: Icon(
+              Icons.delete,
+              color: Colors.red,
+              size: 25,
+            ),
+          )
         ],
       ),
     );

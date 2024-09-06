@@ -24,15 +24,18 @@ class _SearchScreenState extends State<SearchScreen> {
         backgroundColor: Color(0xff514F4F),
         actions: [
           IconButton(
-            icon: Icon(Icons.search,color: Colors.white,size: 25,),
+            icon: Icon(
+              Icons.search,
+              color: Colors.white,
+              size: 25,
+            ),
             onPressed: _startSearch,
           ),
         ],
       ),
       body: Center(
-        child: Text("Tap the search icon to search for movies",style: TextStyle(
-          color: Colors.white,fontWeight: FontWeight.w400,fontSize: 17
-        ),),
+        child: Text("Tap the search icon to search for movies",
+            style: Theme.of(context).textTheme.bodyLarge),
       ),
     );
   }

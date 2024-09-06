@@ -103,10 +103,8 @@ class _RecommendSectionState extends State<RecommendSection> {
                                     movie?.title ?? "",
                                     style: Theme.of(context)
                                         .textTheme
-                                        .bodySmall
-                                        ?.copyWith(
-                                          color: Colors.white,
-                                        ),
+                                        .bodyMedium
+
                                   ),
                                   SizedBox(height: 3),
                                   Text(

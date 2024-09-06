@@ -42,7 +42,7 @@ class BrowserScreen extends StatelessWidget {
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(20),
-                    child: Center( // Ensure the text is centered inside the container
+                    child: Center(
                       child: Text(
                         nameCategory[index].name ?? "",
                           style: Theme.of(context).textTheme.bodyLarge,

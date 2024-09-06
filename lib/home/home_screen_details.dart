@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/API_MANAGER.dart';
 import 'package:movie_app/home/small_container.dart';
 
-
 class HomeScreenDetails extends StatefulWidget {
   static const String routeName = 'details';
   const HomeScreenDetails({super.key});
@@ -38,9 +37,7 @@ class _HomeScreenDetailsState extends State<HomeScreenDetails> {
                   backgroundColor: Color(0xff1A1A1A),
                   appBar: AppBar(
                     backgroundColor: Colors.transparent,
-                    iconTheme: IconThemeData(
-                        color: Colors.white
-                    ),
+                    iconTheme: IconThemeData(color: Colors.white),
                     title: Text(
                       movieDetails.title ?? "",
                       style: TextStyle(
@@ -66,17 +63,11 @@ class _HomeScreenDetailsState extends State<HomeScreenDetails> {
                           children: [
                             Text(
                               movieDetails.title ?? "",
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w500,
-                                  color: Colors.white),
+                              style: Theme.of(context).textTheme.bodyMedium
                             ),
                             Text(
                               movieDetails.releaseDate ?? "",
-                              style: TextStyle(
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.w300,
-                                  color: Color(0xffB5B4B4)),
+                              style: Theme.of(context).textTheme.bodySmall,
                             ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
@@ -114,7 +105,7 @@ class _HomeScreenDetailsState extends State<HomeScreenDetails> {
                                   Expanded(
                                     child: Column(
                                       crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Row(
                                           children: [
@@ -134,10 +125,7 @@ class _HomeScreenDetailsState extends State<HomeScreenDetails> {
                                         SizedBox(height: 5),
                                         Text(
                                           movieDetails.overview ?? "",
-                                          style: TextStyle(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w300,
-                                            color: Color(0xffCBCBCB),
+                                          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                                             overflow: TextOverflow.ellipsis,
                                           ),
                                           maxLines: 5,
@@ -150,11 +138,13 @@ class _HomeScreenDetailsState extends State<HomeScreenDetails> {
                                               size: 17,
                                             ),
                                             Text(
-                                              '7.7',
-                                              style: TextStyle(
-                                                  fontSize: 12,
-                                                  fontWeight: FontWeight.w300,
-                                                  color: Colors.white),
+                                              movieDetails.voteAverage
+                                                  .toString()
+                                                  .substring(0, 3) ??
+                                                  "",
+                                              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                                color:Colors.white
+                                              )
                                             )
                                           ],
                                         )
@@ -194,10 +184,7 @@ class _HomeScreenDetailsState extends State<HomeScreenDetails> {
                       children: [
                         Text(
                           'More Like This',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 15),
+                          style: Theme.of(context).textTheme.bodyLarge,
                         ),
                         SizedBox(
                           height: 10,
@@ -220,11 +207,11 @@ class _HomeScreenDetailsState extends State<HomeScreenDetails> {
                                 child: Stack(children: [
                                   Column(
                                       crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                       children: [
                                         ClipRRect(
                                           borderRadius:
-                                          BorderRadius.circular(10),
+                                              BorderRadius.circular(10),
                                           child: Image.network(
                                             "https://image.tmdb.org/t/p/w500${model?[index].posterPath ?? ""}",
                                             width: 105,
@@ -237,7 +224,7 @@ class _HomeScreenDetailsState extends State<HomeScreenDetails> {
                                         ),
                                         Row(
                                           mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                              MainAxisAlignment.center,
                                           children: [
                                             Icon(
                                               Icons.star,
@@ -248,21 +235,20 @@ class _HomeScreenDetailsState extends State<HomeScreenDetails> {
                                               width: 4,
                                             ),
                                             Text(
-                                              '7.7',
-                                              style: TextStyle(
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.w300,
-                                                color: Colors.white,
-                                              ),
+                                              model?[index]
+                                                      .voteAverage
+                                                      .toString()
+                                                      .substring(0, 3) ??
+                                                  "",
+                                              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                                color:Colors.white
+                                              )
                                             )
                                           ],
                                         ),
                                         Text(
                                           model?[index].title ?? "",
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w400,
-                                            fontSize: 13,
+                                          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                                             overflow: TextOverflow.ellipsis,
                                           ),
                                           maxLines: 2,
@@ -272,12 +258,9 @@ class _HomeScreenDetailsState extends State<HomeScreenDetails> {
                                         ),
                                         Text(
                                           model?[index].releaseDate ?? "",
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w300,
-                                            fontSize: 12,
+                                          style: Theme.of(context).textTheme.bodySmall?.copyWith(
                                             overflow: TextOverflow.ellipsis,
-                                          ),
+                                          )
                                         )
                                       ]),
                                   Positioned(

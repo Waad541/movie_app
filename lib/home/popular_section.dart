@@ -139,7 +139,7 @@ class _PopularSectionState extends State<PopularSection> {
             enlargeCenterPage: true,
             viewportFraction: 1,
             height: 340,
-            // autoPlay: true,
+             autoPlay: true,
             enableInfiniteScroll: true,
           ),
         );
